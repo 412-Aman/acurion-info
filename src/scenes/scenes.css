@@ -1,0 +1,136 @@
+/* Shared stage look: a cool well with a faint teal light, the app's window shadow, the drawer curve. */
+.scene-slot { position: relative; }
+.scene-slot .ss-stage {
+  overflow: hidden; border-radius: 24px;
+  background:
+    radial-gradient(90% 80% at 100% 0%, rgb(22 140 131 / .16), transparent 60%),
+    radial-gradient(70% 70% at 0% 100%, rgb(25 49 73 / .1), transparent 65%),
+    linear-gradient(180deg, #dfe7ec, #d4dee5);
+  box-shadow: inset 0 0 0 1px rgb(16 29 45 / .06);
+  --ss-accent: #168c83;
+  --ss-shadow-hero: 0 0 0 1px rgb(16 29 45 / .08), 0 2px 4px rgb(16 29 45 / .04), 0 30px 70px -24px rgb(16 29 45 / .38);
+}
+.scene-slot.is-navy .ss-stage {
+  background:
+    radial-gradient(80% 80% at 100% 0%, rgb(22 140 131 / .28), transparent 62%),
+    linear-gradient(180deg, #13253a, #0e1a29);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .06);
+}
+.scene-replay {
+  position: absolute; right: 14px; bottom: 14px; z-index: 5; display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px;
+  border: 1px solid rgb(16 29 45 / .1); border-radius: 999px; background: rgb(248 250 251 / .86); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  color: var(--navy-2); font-size: 12.5px; font-weight: 560; cursor: pointer; opacity: 0; transition: opacity 200ms ease, transform 160ms var(--ease-out);
+}
+.scene-slot:hover .scene-replay, .scene-replay:focus-visible { opacity: 1; }
+.scene-replay:active { transform: scale(.96); }
+@media (hover: none) { .scene-replay { opacity: 1; } }
+
+.sc-window { position: absolute; box-shadow: var(--ss-shadow-hero); }
+.sc-page { padding: 16px 20px; }
+.sc-page-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+.sc-page-head strong { font-size: 18px; font-weight: 560; letter-spacing: -.02em; }
+.sc-page-head span { font-size: 12px; color: var(--faint); }
+.sc-list { overflow: hidden; }
+.sc-investigate .sc-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 112px 96px; }
+.sc-investigate .ss-stage[data-layout=compact] .sc-grid { grid-template-columns: minmax(0, 1fr) 112px; }
+.sc-acct { font-size: 11.5px; color: var(--dim); }
+.sc-filler { display: grid; gap: 7px; }
+
+/* The K7 pill and its notice: one navy shape that opens from the pill and closes back into it */
+.sc-island-slot { position: relative; flex: 1; height: 30px; filter: drop-shadow(0 8px 16px rgb(16 29 45 / .28)); z-index: 6; }
+.sc-island {
+  position: absolute; top: 0; left: 50%; width: 292px; height: 62px; margin-left: -146px; background: var(--navy); color: var(--on-navy);
+  clip-path: inset(0 94px 32px 94px round 15px); transition: clip-path 560ms cubic-bezier(.32, .72, 0, 1);
+}
+.sc-island[data-open] { clip-path: inset(0 0 0 0 round 20px); }
+.sc-island-pill { position: absolute; top: 0; left: 94px; width: 104px; height: 30px; display: flex; align-items: center; justify-content: center; gap: 8px; font: 600 12px/1 var(--font); transition: opacity 160ms ease; }
+.sc-island[data-open] .sc-island-pill { opacity: 0; }
+.sc-island-body { position: absolute; inset: 0; display: flex; align-items: flex-start; gap: 11px; padding: 13px 16px; opacity: 0; filter: blur(3px); transition: opacity 200ms ease, filter 200ms ease; }
+.sc-island-body[data-show] { opacity: 1; filter: none; transition-delay: 160ms; transition-duration: 320ms; }
+.sc-island-body strong { display: block; font-size: 13px; font-weight: 600; }
+.sc-island-body small { display: block; margin-top: 2px; font-size: 11.5px; color: var(--on-navy-dim); white-space: nowrap; }
+.sc-island-body[data-tone=ok] .ac-notice-mark { background: #2fa37f; box-shadow: 0 0 12px rgb(47 163 127 / .6); }
+
+/* The alert detail slides in like the app's drawer */
+.sc-detail {
+  position: absolute; z-index: 4; border-radius: 16px; background: var(--surface);
+  box-shadow: 0 0 0 1px rgb(16 29 45 / .07), 0 2px 6px rgb(16 29 45 / .06), 0 28px 60px -20px rgb(16 29 45 / .42);
+  opacity: 0; transform: translateX(28px); transition: opacity 260ms ease, transform 620ms cubic-bezier(.32, .72, 0, 1);
+}
+.sc-detail[data-show] { opacity: 1; transform: none; }
+.sc-detail .sc-grow { transform: scaleX(0); transform-origin: left; transition: transform 1000ms var(--ease-out) 160ms; }
+.sc-detail[data-show] .sc-grow { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-island, .sc-detail, .sc-detail .sc-grow { transition-duration: 1ms !important; }
+}
+
+/* The hero's detail is a compact version of the drawer: same parts, tighter rhythm */
+.sc-detail .ac-detail { padding: 14px 16px 14px; }
+.sc-detail .ac-gauge { margin-top: 12px; padding: 10px 12px; }
+.sc-detail .ac-why { margin-top: 12px; }
+.sc-detail .ac-why-row { padding: 3px 0; }
+.sc-detail .ac-decisions { margin-top: 12px; }
+.sc-detail .ac-decision { flex-direction: row; align-items: center; gap: 8px; padding: 7px 8px; }
+.sc-detail .ac-decision-icon { margin: 0; }
+.sc-detail .ac-decision small { display: none; }
+
+/* K7: the pill opens into the live panel and stays one navy shape */
+.sc-k7 .ac-top { position: relative; }
+.sc-k7-slot { flex: 1; height: 30px; }
+.sc-k7-island {
+  --w: 340px; z-index: 6;
+  position: absolute; top: 11px; left: 286px; width: var(--w); margin-left: calc(var(--w) / -2);
+  background: var(--navy); color: var(--on-navy); filter: drop-shadow(0 10px 22px rgb(16 29 45 / .3));
+  clip-path: inset(0 calc(50% - 62px) calc(100% - 30px) calc(50% - 62px) round 15px);
+  transition: clip-path 620ms cubic-bezier(.32, .72, 0, 1);
+}
+.ss-stage[data-layout=compact] .sc-k7-island { --w: 300px; left: 163px; }
+.sc-k7-island[data-open] { clip-path: inset(0 0 0 0 round 22px); }
+.sc-k7-pill { left: calc(50% - 62px); width: 124px; }
+.sc-k7-island[data-open] .sc-k7-pill { opacity: 0; pointer-events: none; }
+.sc-k7-panel { padding: 16px 16px 14px; opacity: 0; filter: blur(3px); transition: opacity 200ms ease, filter 200ms ease; }
+.sc-k7-island[data-open] .sc-k7-panel { opacity: 1; filter: none; transition-delay: 140ms; transition-duration: 340ms; }
+.sc-k7-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.sc-k7-head strong { display: block; margin-top: 2px; font-size: 15px; font-weight: 600; letter-spacing: -.015em; }
+.sc-k7-state { flex: none; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--navy-3); color: var(--on-navy-dim); font: 500 10.5px var(--mono); transition: border-color 200ms ease, color 200ms ease; }
+.sc-k7-state[data-running] { border-color: rgb(63 179 168 / .5); color: #8fd8d0; }
+.sc-k7-desc { margin: 6px 0 0; font-size: 12px; color: var(--on-navy-dim); }
+.sc-k7 .k7-track { margin: 12px 0 10px; }
+.sc-k7 .k7-alert-row { margin: 0; }
+.sc-k7 .ss-collapse:first-of-type .k7-alert-row { margin-top: 8px; }
+.sc-k7-actions { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.sc-k7-note { font-size: 11px; color: var(--on-navy-faint); }
+.sc-k7-banner { display: grid; gap: 10px; padding: 22px; border-radius: 12px; background: var(--navy); }
+.sc-k7-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.sc-k7-card { display: grid; gap: 10px; padding: 14px; }
+.ss-stage[data-layout=compact] .sc-k7-cards { grid-template-columns: 1fr 1fr; }
+
+/* Upload: the panel over the dimmed page, one step at a time */
+.sc-upload-row { display: grid; grid-template-columns: 1.4fr 1fr .6fr; align-items: center; gap: 16px; padding: 14px 16px; margin-bottom: 8px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); }
+.sc-scrim { position: absolute; inset: 0; background: rgb(16 29 45 / .22); backdrop-filter: blur(1.5px); -webkit-backdrop-filter: blur(1.5px); }
+.sc-up { position: absolute; z-index: 3; }
+.sc-up-body { position: relative; height: 300px; margin-top: 2px; }
+.ss-stage[data-layout=compact] .sc-up-body { height: 318px; }
+.sc-up-view { position: absolute; inset: 0; opacity: 0; transform: translateY(8px); filter: blur(2px); pointer-events: none; transition: opacity 260ms ease, transform 420ms var(--ease-out), filter 260ms ease; }
+.sc-up-view[data-show] { opacity: 1; transform: none; filter: none; transition-delay: 120ms; }
+.sc-map { opacity: 0; transform: translateY(6px); transition: opacity 360ms ease, transform 520ms var(--ease-out), box-shadow 240ms ease; }
+.sc-map[data-in] { opacity: 1; transform: none; }
+.sc-up-center { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; }
+.sc-up-center strong { margin-top: 10px; font-size: 14px; font-weight: 600; }
+.sc-up-center p { max-width: 280px; font-size: 12.5px; line-height: 1.5; color: var(--on-navy-dim); }
+.sc-scan { display: flex; align-items: flex-end; gap: 7px; height: 56px; }
+.sc-scan i { width: 12px; height: 100%; border-radius: 6px; background: var(--navy-2); animation: sc-scan 1.3s var(--ease-out) infinite; }
+@keyframes sc-scan { 0%, 100% { background: var(--navy-2); transform: scaleY(.55); } 40% { background: var(--accent-on-navy); transform: scaleY(1); } }
+.sc-small-b { font-family: var(--font) !important; font-size: 12.5px !important; font-weight: 600; }
+.sc-upload .ac-result-hero strong { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .sc-scan i { animation: none; } }
+.sc-up-top { margin-top: 14px; }
+.sc-up-top .k7-alert-row:first-of-type { margin-top: 6px; }
+.sc-k7-list { margin-top: 12px; }
+.sc-k7-row { display: flex; justify-content: space-between; }
+
+/* Phone layout: the pill sits in the visible middle of the cropped window, so its notice stays in frame */
+.sc-investigate .ss-stage[data-layout=compact] .sc-island { left: 60px; width: 264px; margin-left: -132px; clip-path: inset(0 80px 32px 80px round 15px); }
+.sc-investigate .ss-stage[data-layout=compact] .sc-island[data-open] { clip-path: inset(0 0 0 0 round 20px); }
+.sc-investigate .ss-stage[data-layout=compact] .sc-island-pill { left: 80px; }

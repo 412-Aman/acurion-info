@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @head -->
+    <title>Technology · Acurion</title>
+    <meta name="description" content="How Acurion is built: the browser workspace, Firebase as the only channel to the host, the Acurion K7 and core models, and the security controls around case data." />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!-- @header -->
+    <main id="main">
+      <section class="page-hero">
+        <div class="wrap page-hero-inner">
+          <span class="eyebrow" data-rise>Under the hood</span>
+          <h1 data-rise style="--d:1">Built around data, models <span class="accent-text">and accountable review.</span></h1>
+          <p class="lead" data-rise style="--d:2">The models run on a host computer, the workspace runs in the browser, and the two only ever meet through Firebase and its security rules.</p>
+        </div>
+      </section>
+
+      <section class="arch-section">
+        <div class="wrap">
+          <div class="arch" data-draw>
+            <div class="arch-node" data-rise>
+              <span class="icon-tile"><i data-i="monitor" data-s="20"></i></span>
+              <small>In the browser</small>
+              <h3>Acurion workspace</h3>
+              <p>Every page, the rules engine and the encrypted case workspace. Case data is encrypted before it is stored.</p>
+            </div>
+            <div class="arch-link" aria-hidden="true"><span class="flow to"></span><span class="flow from"></span><em>Commands, files</em><em class="back">Alerts, results</em></div>
+            <div class="arch-node arch-hub" data-rise style="--d:1">
+              <span class="icon-tile"><i data-i="database" data-s="20"></i></span>
+              <small>The only channel</small>
+              <h3>Firebase</h3>
+              <p>Sign-in, the Realtime Database and its security rules. Every write is checked against the user’s role.</p>
+            </div>
+            <div class="arch-link" aria-hidden="true"><span class="flow to"></span><span class="flow from"></span><em>Relayed</em><em class="back">Written back</em></div>
+            <div class="arch-node" data-rise style="--d:2">
+              <span class="icon-tile"><i data-i="server" data-s="20"></i></span>
+              <small>On the host computer</small>
+              <h3>Host bridge</h3>
+              <p>A small Python service that relays commands and uploads to the models and writes their results back.</p>
+              <div class="arch-sub">
+                <div><i data-i="pulse" data-s="15"></i><span><strong>K7 desk</strong>Scores the payment stream live</span></div>
+                <div><i data-i="cpu" data-s="15"></i><span><strong>Batch API and worker</strong>Checks columns, scores uploads</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="arch-note" data-rise><i data-i="lock" data-s="16"></i> The browser never connects to the host, and the host’s API key never leaves it.</p>
+        </div>
+      </section>
+
+      <section class="section models">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow" data-rise><span class="num">01</span> Models</span>
+            <h2 class="h-section" data-rise style="--d:1">Three ways to score risk.</h2>
+            <p class="lead" data-rise style="--d:2">Each source does one job. Scores are rankings from 0 to 1 for review; they are never probabilities or percentages.</p>
+          </div>
+          <div class="model-grid">
+            <article class="card card-pad model-card" data-rise>
+              <div class="model-top"><span class="icon-tile"><i data-i="pulse" data-s="20"></i></span><span class="tag">Live</span></div>
+              <h3 class="h-card">Acurion K7</h3>
+              <p class="muted">Three XGBoost models, averaged, score a recorded stream of IBM’s simulated bank payments (HI-Large) one batch at a time, with 14 days of history per account.</p>
+              <dl class="model-facts"><div><dt>Scores</dt><dd>Live payments</dd></div><div><dt>Runs on</dt><dd>The host’s K7 desk</dd></div></dl>
+            </article>
+            <article class="card card-pad model-card" data-rise style="--d:1">
+              <div class="model-top"><span class="icon-tile"><i data-i="upload" data-s="20"></i></span><span class="tag">Uploads</span></div>
+              <h3 class="h-card">Acurion core model</h3>
+              <p class="muted">Scores uploaded CSV files in any column layout, flags high-risk accounts and groups linked transfers into laundering networks.</p>
+              <dl class="model-facts"><div><dt>Scores</dt><dd>Uploaded datasets</dd></div><div><dt>Runs on</dt><dd>The host’s batch API</dd></div></dl>
+            </article>
+            <article class="card card-pad model-card" data-rise style="--d:2">
+              <div class="model-top"><span class="icon-tile"><i data-i="controls" data-s="20"></i></span><span class="tag">Written</span></div>
+              <h3 class="h-card">Rules engine</h3>
+              <p class="muted">Readable checks on the case workspace’s customers and payments: thresholds, velocity, structuring, KYC, PEP and sanctions.</p>
+              <dl class="model-facts"><div><dt>Checks</dt><dd>Case workspace data</dd></div><div><dt>Runs in</dt><dd>The browser</dd></div></dl>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section security-wrap">
+        <div class="navy rounded-band security-band">
+          <div class="wrap">
+            <div class="section-head">
+              <span class="eyebrow" data-rise><span class="num">02</span> Security</span>
+              <h2 class="h-section" data-rise style="--d:1">Case data stays private and every change stays visible.</h2>
+            </div>
+            <div class="sec-grid">
+              <div class="card card-pad sec-card" data-rise><span class="icon-tile"><i data-i="lock" data-s="20"></i></span><h3 class="h-card">Encrypted case workspace</h3><p>AES-256-GCM with a key from a PBKDF2-SHA-256 passphrase. It locks itself after 15 minutes idle.</p></div>
+              <div class="card card-pad sec-card" data-rise style="--d:1"><span class="icon-tile"><i data-i="link" data-s="20"></i></span><h3 class="h-card">Tamper-evident audit trail</h3><p>Every change is SHA-256 hash-chained. Verify integrity names the first altered event.</p></div>
+              <div class="card card-pad sec-card" data-rise style="--d:2"><span class="icon-tile"><i data-i="badgeCheck" data-s="20"></i></span><h3 class="h-card">Signed reports</h3><p>Each package carries a SHA-256 fingerprint and an ECDSA P-256 signature, so any later edit shows.</p></div>
+              <div class="card card-pad sec-card" data-rise><span class="icon-tile"><i data-i="users" data-s="20"></i></span><h3 class="h-card">Role-based access</h3><p>Analysts, reviewers, admins and viewers, enforced by the database’s own rules rather than the page.</p></div>
+              <div class="card card-pad sec-card" data-rise style="--d:1"><span class="icon-tile"><i data-i="server" data-s="20"></i></span><h3 class="h-card">No direct line to the host</h3><p>Start, Pause and uploads pass through Firebase rules. The backend key never reaches a browser.</p></div>
+              <div class="card card-pad sec-card" data-rise style="--d:2"><span class="icon-tile"><i data-i="eyeOff" data-s="20"></i></span><h3 class="h-card">Browser hardening</h3><p>A strict Content Security Policy and security headers, plus Mask personal data for screen sharing.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section stack">
+        <div class="wrap stack-grid">
+          <div class="section-head">
+            <span class="eyebrow" data-rise><span class="num">03</span> Built with</span>
+            <h2 class="h-section" data-rise style="--d:1">Proven parts, put together carefully.</h2>
+          </div>
+          <div class="stack-tags" data-rise style="--d:2">
+            <span class="tag">Vite</span><span class="tag">React 19</span><span class="tag">Tailwind CSS</span><span class="tag">Cytoscape.js</span><span class="tag">Motion</span><span class="tag">Firebase Authentication</span><span class="tag">Firebase Realtime Database</span><span class="tag">Web Crypto API</span><span class="tag">XGBoost</span><span class="tag">Python</span><span class="tag">Vercel</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section next-wrap">
+        <div class="wrap"><a class="next-page" href="/results.html" data-rise><div><small>Next</small><strong>How well it works</strong></div><span class="go"><i data-i="arrowRight" data-s="22"></i></span></a></div>
+      </section>
+    </main>
+    <!-- @footer -->
+  </body>
+</html>

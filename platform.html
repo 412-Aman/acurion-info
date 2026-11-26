@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @head -->
+    <title>Platform · Acurion</title>
+    <meta name="description" content="Acurion's six capabilities: Acurion K7 live detection, dataset analysis, a rules engine, explainable alerts, account networks and signed case reports." />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!-- @header -->
+    <main id="main">
+      <section class="page-hero">
+        <div class="wrap page-hero-inner">
+          <span class="eyebrow" data-rise>The platform</span>
+          <h1 data-rise style="--d:1">Every way Acurion finds risk, <span class="accent-text">in one workspace.</span></h1>
+          <p class="lead" data-rise style="--d:2">A real-time model, your own bank files and written rules raise the alerts. The same workspace explains them, traces the money and turns the evidence into a report.</p>
+          <div class="cap-strip" data-rise style="--d:3">
+            <span class="tag"><i data-i="pulse" data-s="14"></i>Acurion K7</span><span class="tag"><i data-i="upload" data-s="14"></i>Dataset analysis</span><span class="tag"><i data-i="controls" data-s="14"></i>Rules engine</span><span class="tag"><i data-i="alerts" data-s="14"></i>Explainable alerts</span><span class="tag"><i data-i="graph" data-s="14"></i>Account networks</span><span class="tag"><i data-i="reports" data-s="14"></i>Cases and reporting</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature" id="k7">
+        <div class="wrap feature-grid">
+          <div class="feature-copy">
+            <span class="eyebrow" data-rise><span class="num">01</span> Acurion K7</span>
+            <h2 class="h-section" data-rise style="--d:1">Real-time monitoring that says why.</h2>
+            <p class="lead" data-rise style="--d:2">K7 checks each payment as it arrives, against the previous 14 days of that account’s activity. Three trained models score it together, and every alert carries its reasons in plain language.</p>
+            <ul class="checks" data-rise style="--d:3">
+              <li><i data-i="check" data-s="16"></i>Start and pause from any browser, for reviewers and admins</li>
+              <li><i data-i="check" data-s="16"></i>Progress and the newest alerts live in the header pill</li>
+              <li><i data-i="check" data-s="16"></i>On validation data, 9 in 10 of its alerts were laundering</li>
+            </ul>
+            <a class="link-go" href="/results.html" data-rise style="--d:4">How K7 was measured <i data-i="arrowRight" data-s="16"></i></a>
+          </div>
+          <div class="feature-visual" data-rise style="--d:1">
+            <div class="scene-slot scene-k7" data-scene="k7" role="img" aria-label="Animated demo: the K7 pill opens into its live panel, K7 is started and the counts and newest alerts arrive."></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature" id="datasets">
+        <div class="wrap feature-grid is-flipped">
+          <div class="feature-copy">
+            <span class="eyebrow" data-rise><span class="num">02</span> Dataset analysis</span>
+            <h2 class="h-section" data-rise style="--d:1">Bring your own bank file.</h2>
+            <p class="lead" data-rise style="--d:2">Upload a CSV in whatever layout your bank exports. Acurion matches the columns to what it needs and asks you to confirm them before anything is scored.</p>
+            <ul class="checks" data-rise style="--d:3">
+              <li><i data-i="check" data-s="16"></i>Best guesses are marked, and nothing is scored until you confirm</li>
+              <li><i data-i="check" data-s="16"></i>Ambiguous dates like 03/09 are asked about, never guessed</li>
+              <li><i data-i="check" data-s="16"></i>Alerts and laundering networks are shared with the whole team</li>
+            </ul>
+          </div>
+          <div class="feature-visual" data-rise style="--d:1">
+            <div class="scene-slot scene-upload" data-scene="upload" role="img" aria-label="Animated demo: a bank file's columns are matched, the date order is confirmed, the file is scanned and 99 alerts and 15 networks are found."></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature" id="rules">
+        <div class="wrap feature-grid">
+          <div class="feature-copy">
+            <span class="eyebrow" data-rise><span class="num">03</span> Rules engine</span>
+            <h2 class="h-section" data-rise style="--d:1">Written checks anyone can read.</h2>
+            <p class="lead" data-rise style="--d:2">Alongside the models, a rules engine checks the case workspace’s customers and payments. Every result is Pass, Flag or Block, with the rule that fired.</p>
+            <ul class="checks" data-rise style="--d:3">
+              <li><i data-i="check" data-s="16"></i>Thresholds, income multiples, velocity and structuring</li>
+              <li><i data-i="check" data-s="16"></i>Incomplete KYC, PEP and confirmed sanctions matches</li>
+              <li><i data-i="check" data-s="16"></i>Results are recommendations; a person decides</li>
+            </ul>
+          </div>
+          <div class="feature-visual" data-rise style="--d:1">
+            <div class="visual-well">
+              <div class="ac ac-card rules-card">
+                <div class="ac-card-head"><strong>Explainable transaction monitoring</strong><span class="ac-btn">Run monitoring</span></div>
+                <div class="ac-th rules-grid"><span>Transaction</span><span>Amount</span><span>Rule</span><span>Result</span></div>
+                <div class="ac-row rules-grid"><span><span class="ac-id">CW-TX-1001</span><span class="ac-sub">CUST-1001 to CP-2002</span></span><span class="ac-mono rules-amt">AED 70,000</span><span class="ac-rule-reason">THRESHOLD</span><span class="ac-badge" data-tone="flag">Flag</span></div>
+                <div class="ac-row rules-grid"><span><span class="ac-id">CW-TX-1002</span><span class="ac-sub">CUST-1001 to CP-2002</span></span><span class="ac-mono rules-amt">AED 82,000</span><span class="ac-rule-reason">VELOCITY</span><span class="ac-badge" data-tone="flag">Flag</span></div>
+                <div class="ac-row rules-grid"><span><span class="ac-id">CW-TX-1003</span><span class="ac-sub">CUST-1001 to CP-2001</span></span><span class="ac-mono rules-amt">AED 65,000</span><span class="ac-rule-reason">KYC</span><span class="ac-badge" data-tone="flag">Flag</span></div>
+                <div class="ac-row rules-grid"><span><span class="ac-id">CW-TX-1004</span><span class="ac-sub">CUST-1002 to CP-2003</span></span><span class="ac-mono rules-amt">AED 1,400</span><span class="ac-rule-reason rules-none">No rule fired</span><span class="ac-badge" data-tone="pass">Pass</span></div>
+                <div class="ac-row rules-grid"><span><span class="ac-id">CW-TX-1005</span><span class="ac-sub">CUST-1003 to CP-2002</span></span><span class="ac-mono rules-amt">AED 180,000</span><span class="ac-rule-reason">SANCTION_CONFIRMED</span><span class="ac-badge" data-tone="block">Block</span></div>
+              </div>
+              <div class="ac ac-card rules-reason">
+                <span class="ac-kicker">Why CW-TX-1005 is blocked</span>
+                <p>Confirmed sanctions match; block recommended. An analyst reviews it before anything else happens.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature" id="alerts">
+        <div class="wrap feature-grid is-flipped">
+          <div class="feature-copy">
+            <span class="eyebrow" data-rise><span class="num">04</span> Explainable alerts</span>
+            <h2 class="h-section" data-rise style="--d:1">Every alert shows its working.</h2>
+            <p class="lead" data-rise style="--d:2">Open an alert to see what raised its score, the payment behind it and the accounts involved. Then record a decision and the reason for it.</p>
+            <ul class="checks" data-rise style="--d:3">
+              <li><i data-i="check" data-s="16"></i>Scores rank from 0 to 1; they are never probabilities</li>
+              <li><i data-i="check" data-s="16"></i>Reviewing, Escalate or Close, with a note and a name</li>
+              <li><i data-i="check" data-s="16"></i>Escalating opens a case with the evidence attached</li>
+            </ul>
+          </div>
+          <div class="feature-visual" data-rise style="--d:1">
+            <div class="visual-well visual-well-drawer">
+              <div class="ac ac-card drawer-card">
+                <div class="ac-detail">
+                  <span class="ac-kicker">Alert</span>
+                  <div class="ac-detail-title">al_9f21c4</div>
+                  <div class="ac-detail-badges"><span class="ac-badge" data-tone="critical">Critical</span><span class="ac-stage" data-stage="open">Open</span><span class="ac-badge drawer-src"><i data-i="pulse" data-s="11"></i>K7 live</span></div>
+                  <div class="ac-gauge"><div class="ac-gauge-top"><span>K7 score</span><strong>0.962</strong></div><div class="ac-gauge-track"><i class="grow" style="width:96%"></i></div></div>
+                  <div class="ac-why" data-draw>
+                    <div class="ac-why-title">Why it was flagged</div>
+                    <div class="ac-why-row"><span>Receiver passed almost the same amount on within 72 hours</span><span class="ac-why-bar"><i style="width:100%"></i></span><b>+1.42</b></div>
+                    <div class="ac-why-row"><span>First payment from this sender to this receiver</span><span class="ac-why-bar"><i style="width:62%"></i></span><b>+0.88</b></div>
+                    <div class="ac-why-row"><span>Amount far above the sender’s usual payments</span><span class="ac-why-bar"><i style="width:43%"></i></span><b>+0.61</b></div>
+                    <div class="ac-why-row" data-down><span>Sender’s account is a long-standing customer</span><span class="ac-why-bar"><i style="width:25%"></i></span><b>−0.35</b></div>
+                  </div>
+                  <div class="drawer-label">Your decision</div>
+                  <div class="ac-decisions">
+                    <div class="ac-decision" data-on><span class="ac-decision-icon"><i data-i="eye" data-s="14"></i></span><strong>Reviewing</strong><small>Keep it open while you check</small></div>
+                    <div class="ac-decision"><span class="ac-decision-icon"><i data-i="cases" data-s="14"></i></span><strong>Escalate</strong><small>Open a case for it</small></div>
+                    <div class="ac-decision"><span class="ac-decision-icon"><i data-i="checkCircle" data-s="14"></i></span><strong>Close</strong><small>Nothing suspicious found</small></div>
+                  </div>
+                  <div class="drawer-note">Checking the receiver’s other payments this week before deciding.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature" id="networks">
+        <div class="wrap feature-grid">
+          <div class="feature-copy">
+            <span class="eyebrow" data-rise><span class="num">05</span> Account networks</span>
+            <h2 class="h-section" data-rise style="--d:1">Follow the money, hop by hop.</h2>
+            <p class="lead" data-rise style="--d:2">The account network shows who sent money to whom. Uploaded datasets add the laundering networks the model found, and you can trace a dated chain from one account to another.</p>
+            <ul class="checks" data-rise style="--d:3">
+              <li><i data-i="check" data-s="16"></i>Pass-through, fan-in, fan-out, round-trip and chain patterns</li>
+              <li><i data-i="check" data-s="16"></i>Flagged transfers in red, a traced trail in teal</li>
+              <li><i data-i="check" data-s="16"></i>Save the trail to a case as evidence</li>
+            </ul>
+          </div>
+          <div class="feature-visual" data-rise style="--d:1">
+            <div class="visual-well net-well" data-draw>
+              <div class="net-toolbar ac"><span class="ac-card net-trace"><i data-i="route" data-s="15"></i><span class="ac-mono">ACC-10293</span><i data-i="arrowRight" data-s="13"></i><span class="ac-mono">ACC-77120</span></span><span class="ac-badge net-found" data-tone="pass">Money trail found · 3 hops</span></div>
+              <svg class="ac-net net-big" viewBox="0 0 520 330" aria-hidden="true">
+                <path class="edge" d="M70 70 L190 120" /><path class="edge" d="M70 200 L190 120" /><path class="edge" d="M60 290 L190 120" />
+                <path class="edge" d="M190 120 L310 70" /><path class="edge" d="M190 120 L300 220" /><path class="edge flag" d="M300 220 L430 260" />
+                <path class="edge flag" d="M310 70 L440 120" /><path class="edge" d="M440 120 L460 40" /><path class="edge" d="M300 220 L200 290" />
+                <path class="edge path draw" d="M70 70 L190 120 L310 70 L440 120" />
+                <circle class="node on" cx="70" cy="70" r="11" /><circle class="node" cx="70" cy="200" r="10" /><circle class="node" cx="60" cy="290" r="10" />
+                <circle class="node hub" cx="190" cy="120" r="14" /><circle class="node on" cx="310" cy="70" r="11" /><circle class="node" cx="300" cy="220" r="11" />
+                <circle class="node on" cx="440" cy="120" r="12" /><circle class="node" cx="430" cy="260" r="10" /><circle class="node" cx="460" cy="40" r="9" /><circle class="node" cx="200" cy="290" r="9" />
+                <text class="label-on" x="70" y="98" text-anchor="middle">ACC-10293</text><text x="190" y="152" text-anchor="middle">ACC-40018</text><text class="label-on" x="310" y="98" text-anchor="middle">ACC-55812</text><text class="label-on" x="440" y="149" text-anchor="middle">ACC-77120</text>
+              </svg>
+              <ul class="net-legend"><li><i class="lg-edge"></i>Transfer</li><li><i class="lg-flag"></i>Flagged transfer</li><li><i class="lg-path"></i>Traced trail</li><li><i class="lg-hub"></i>Pass-through account</li></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature" id="cases">
+        <div class="wrap feature-grid is-flipped">
+          <div class="feature-copy">
+            <span class="eyebrow" data-rise><span class="num">06</span> Cases and reporting</span>
+            <h2 class="h-section" data-rise style="--d:1">Evidence that holds up.</h2>
+            <p class="lead" data-rise style="--d:2">Alerts, notes and evidence come together in an encrypted case. The report leaves signed, with goAML XML, and the audit trail records every change.</p>
+            <ul class="checks" data-rise style="--d:3">
+              <li><i data-i="check" data-s="16"></i>Case workspace encrypted with AES-256-GCM behind a passphrase</li>
+              <li><i data-i="check" data-s="16"></i>Reports carry a SHA-256 fingerprint and an ECDSA P-256 signature</li>
+              <li><i data-i="check" data-s="16"></i>Anyone can verify a report file or the audit trail’s integrity</li>
+            </ul>
+          </div>
+          <div class="feature-visual" data-rise style="--d:1">
+            <div class="visual-well report-well">
+              <div class="ac ac-report-paper report-big">
+                <span class="ac-report-mark">ACURION · SUSPICIOUS TRANSACTION REPORT</span>
+                <strong>CASE-0142 · al_9f21c4</strong>
+                <div class="ac-lines"><i style="width:94%"></i><i style="width:80%"></i><i style="width:88%"></i><i style="width:62%"></i><i style="width:74%"></i></div>
+                <div class="ac-seal"><span class="ac-seal-icon"><i data-i="badgeCheck" data-s="16"></i></span><div><strong>Signature verified</strong><small>ECDSA P-256 · SHA-256 3f9a…c2e1</small></div></div>
+                <div class="ac-files"><span class="ac-file"><i data-i="fileCode" data-s="14"></i>CASE-0142-report.json</span><span class="ac-file"><i data-i="fileCode" data-s="14"></i>CASE-0142-goaml.xml</span></div>
+              </div>
+              <div class="ac chain-card ac-card">
+                <div class="chain-head"><span class="ac-kicker">Audit trail</span><span class="ac-badge" data-tone="pass">Intact</span></div>
+                <div class="ac-chain">
+                  <div class="ac-block"><small>Alert reviewed</small><code>a41c…9e02</code></div><span class="ac-link"></span>
+                  <div class="ac-block"><small>Case opened</small><code>7d3b…41fa</code></div><span class="ac-link"></span>
+                  <div class="ac-block"><small>Report signed</small><code>3f9a…c2e1</code></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section next-wrap">
+        <div class="wrap"><a class="next-page" href="/how-it-works.html" data-rise><div><small>Next</small><strong>How an investigation runs</strong></div><span class="go"><i data-i="arrowRight" data-s="22"></i></span></a></div>
+      </section>
+    </main>
+    <!-- @footer -->
+  </body>
+</html>

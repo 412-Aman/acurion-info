@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @head -->
+    <title>Results · Acurion</title>
+    <meta name="description" content="How Acurion K7 performed on validation data, how the website is tested, and how Acurion is meant to be used: people decide, Acurion supports." />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!-- @header -->
+    <main id="main">
+      <section class="page-hero">
+        <div class="wrap page-hero-inner">
+          <span class="eyebrow" data-rise>Evaluation</span>
+          <h1 data-rise style="--d:1">Measured performance, <span class="accent-text">with context.</span></h1>
+          <p class="lead" data-rise style="--d:2">How Acurion K7 did on held-out validation data, what those numbers mean, and where they stop.</p>
+        </div>
+      </section>
+
+      <section class="metrics-section">
+        <div class="wrap">
+          <div class="metric-grid">
+            <article class="card metric" data-rise>
+              <div class="metric-top"><span class="metric-label">Precision</span><span class="metric-value" data-count="0.90">0.90</span></div>
+              <div class="dots" data-draw aria-hidden="true"><i data-on></i><i data-on></i><i data-on></i><i data-on></i><i data-on></i><i data-on></i><i data-on></i><i data-on></i><i data-on></i><i></i></div>
+              <p><strong>9 in 10</strong> alerts K7 raised were laundering.</p>
+            </article>
+            <article class="card metric" data-rise style="--d:1">
+              <div class="metric-top"><span class="metric-label">Recall</span><span class="metric-value" data-count="0.40">0.40</span></div>
+              <div class="dots" data-draw aria-hidden="true"><i data-on></i><i data-on></i><i data-on></i><i data-on></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <p>K7 found <strong>4 in 10</strong> laundering transfers.</p>
+            </article>
+            <article class="card metric" data-rise style="--d:2">
+              <div class="metric-top"><span class="metric-label">Average precision</span><span class="metric-value" data-count="0.56">0.56</span></div>
+              <div class="ap-bar" data-draw aria-hidden="true"><i style="width:56%"></i></div>
+              <p>How well K7 ranks laundering above everything else, across every threshold.</p>
+            </article>
+          </div>
+          <p class="metric-source" data-rise><i data-i="database" data-s="16"></i> Acurion K7 on the validation split of IBM’s HI-Large dataset of simulated bank payments.</p>
+        </div>
+      </section>
+
+      <section class="section reading">
+        <div class="wrap reading-grid">
+          <div class="section-head">
+            <span class="eyebrow" data-rise><span class="num">01</span> Reading the numbers</span>
+            <h2 class="h-section" data-rise style="--d:1">A focused queue, not a complete one.</h2>
+            <p class="lead" data-rise style="--d:2">High precision keeps an analyst’s time on alerts that matter. A recall of 0.40 means K7 on its own misses many laundering transfers, which is one reason uploaded datasets and written rules sit beside it.</p>
+          </div>
+          <ul class="caveats">
+            <li class="card card-pad" data-rise><span class="icon-tile"><i data-i="gauge" data-s="20"></i></span><div><h3 class="h-card">Scores are rankings</h3><p class="muted">A score from 0 to 1 orders activity for review. It is not the probability that laundering happened.</p></div></li>
+            <li class="card card-pad" data-rise style="--d:1"><span class="icon-tile"><i data-i="database" data-s="20"></i></span><div><h3 class="h-card">Simulated data</h3><p class="muted">The figures come from IBM’s simulated payments. They do not promise the same results on a real bank’s data.</p></div></li>
+            <li class="card card-pad" data-rise style="--d:2"><span class="icon-tile"><i data-i="pulse" data-s="20"></i></span><div><h3 class="h-card">A recorded stream</h3><p class="muted">K7 replays a recorded stream of payments for demonstration. It is not connected to a live bank.</p></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section quality">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow" data-rise><span class="num">02</span> Quality checks</span>
+            <h2 class="h-section" data-rise style="--d:1">Tested before every release.</h2>
+            <p class="lead" data-rise style="--d:2">Automated checks cover access, data mapping, rules, case workflow, encryption, the audit chain and the upload flow.</p>
+          </div>
+          <dl class="facts-row quality-row">
+            <div data-rise><dt>Unit tests for the website</dt><dd><span data-count="99">99</span></dd></div>
+            <div data-rise style="--d:1"><dt>Tests for the host bridge</dt><dd><span data-count="18">18</span></dd></div>
+            <div data-rise style="--d:2"><dt>End-to-end checks, on desktop and phone</dt><dd><span data-count="34">34</span></dd></div>
+            <div data-rise style="--d:3"><dt>Pages checked against a strict security policy</dt><dd><span data-count="12">12</span></dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section responsible-wrap">
+        <div class="navy rounded-band responsible-band">
+          <div class="wrap responsible-grid">
+            <div class="section-head">
+              <span class="eyebrow" data-rise><span class="num">03</span> Responsible use</span>
+              <h2 class="h-section" data-rise style="--d:1">Technology supports decisions. People remain accountable.</h2>
+              <p class="lead" data-rise style="--d:2">Acurion is an investigation-support tool. Every alert it raises waits for a person.</p>
+            </div>
+            <div class="responsible-cards">
+              <div class="card card-pad" data-rise><span class="icon-tile"><i data-i="userCheck" data-s="20"></i></span><h3 class="h-card">Human review</h3><p>An analyst records the decision and the reason for every alert reviewed.</p></div>
+              <div class="card card-pad" data-rise style="--d:1"><span class="icon-tile"><i data-i="fileCode" data-s="20"></i></span><h3 class="h-card">Evidence-led reporting</h3><p>Reports are prepared for review and filed separately, through the FIU’s own portal.</p></div>
+              <div class="card card-pad never" data-rise style="--d:2">
+                <h3 class="h-card">Acurion never</h3>
+                <ul><li><i data-i="xmark" data-s="18"></i>Decides that laundering has happened</li><li><i data-i="xmark" data-s="18"></i>Moves or stops real funds</li><li><i data-i="xmark" data-s="18"></i>Sends reports to regulators on its own</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section next-wrap">
+        <div class="wrap"><a class="next-page" href="/team.html" data-rise><div><small>Next</small><strong>Meet the team</strong></div><span class="go"><i data-i="arrowRight" data-s="22"></i></span></a></div>
+      </section>
+    </main>
+    <!-- @footer -->
+  </body>
+</html>

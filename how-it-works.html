@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @head -->
+    <title>How it works · Acurion</title>
+    <meta name="description" content="How an investigation runs in Acurion: detect, review, investigate and report, with people making every decision." />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!-- @header -->
+    <main id="main">
+      <section class="page-hero">
+        <div class="wrap page-hero-inner">
+          <span class="eyebrow" data-rise>How it works</span>
+          <h1 data-rise style="--d:1">From signal to <span class="accent-text">investigation-ready evidence.</span></h1>
+          <p class="lead" data-rise style="--d:2">Four steps, one workspace. Machine learning and written rules surface the risk; an analyst reviews it, follows the money and decides what happens next.</p>
+        </div>
+      </section>
+
+      <section class="steps-section">
+        <div class="wrap steps" data-steps>
+          <ol class="steps-text">
+            <li class="step" data-step="detect">
+              <span class="step-num">01</span>
+              <h2>Detect</h2>
+              <p class="step-lead">Three sources raise alerts. Acurion K7 checks live payments, the core model scores uploaded bank files, and the rules engine checks the case workspace’s customers and payments.</p>
+              <ul class="checks"><li><i data-i="check" data-s="16"></i>Everything lands in one queue, highest risk first</li><li><i data-i="check" data-s="16"></i>K7 alerts pop up in the header pill as they arrive</li><li><i data-i="check" data-s="16"></i>Each alert names where it came from</li></ul>
+              <div class="step-mobile" data-mobile-for="detect"></div>
+            </li>
+            <li class="step" data-step="review">
+              <span class="step-num">02</span>
+              <h2>Review</h2>
+              <p class="step-lead">Open an alert to see its score, what raised it, the payment itself, both accounts and the customer behind them.</p>
+              <ul class="checks"><li><i data-i="check" data-s="16"></i>Reasons in plain language, strongest first</li><li><i data-i="check" data-s="16"></i>Scores rank from 0 to 1; they are never probabilities</li><li><i data-i="check" data-s="16"></i>Technical detail waits behind More info</li></ul>
+              <div class="step-mobile" data-mobile-for="review"></div>
+            </li>
+            <li class="step" data-step="investigate">
+              <span class="step-num">03</span>
+              <h2>Investigate</h2>
+              <p class="step-lead">Follow the accounts linked to the alert, trace a dated chain from one account to another and save what you find to a case.</p>
+              <ul class="checks"><li><i data-i="check" data-s="16"></i>Laundering patterns from uploads are drawn on the map</li><li><i data-i="check" data-s="16"></i>Due diligence and screening sit in the same workspace</li><li><i data-i="check" data-s="16"></i>Evidence is attached to the case, not copied around</li></ul>
+              <div class="step-mobile" data-mobile-for="investigate"></div>
+            </li>
+            <li class="step" data-step="report">
+              <span class="step-num">04</span>
+              <h2>Report</h2>
+              <p class="step-lead">Record the decision and the reason. An escalated alert becomes a case, and a case becomes a signed report with goAML XML, ready for a person to file.</p>
+              <ul class="checks"><li><i data-i="check" data-s="16"></i>Every change goes into a hash-chained audit trail</li><li><i data-i="check" data-s="16"></i>Anyone can verify the report’s signature later</li><li><i data-i="check" data-s="16"></i>Filing happens through the FIU’s own portal</li></ul>
+              <div class="step-mobile" data-mobile-for="report"></div>
+            </li>
+          </ol>
+
+          <div class="steps-visual" aria-hidden="true">
+            <div class="steps-stage">
+              <div class="step-view" data-view="detect">
+                <div class="ac ac-navy view-notice"><div class="ac-notice"><span class="ac-notice-mark"></span><div><strong>K7 flagged a payment</strong><small><span class="ac-mono">al_9f21c4</span> · score 0.962</small></div></div></div>
+                <div class="ac ac-card view-queue">
+                  <div class="ac-card-head"><strong>Alerts</strong><small>Highest risk first</small></div>
+                  <div class="ac-row view-row" data-sev="critical"><span><span class="ac-id">al_9f21c4</span><span class="ac-sub"><span class="ac-src"><i data-i="pulse" data-s="11"></i>K7 live</span></span></span><span class="ac-meter" data-tone="critical"><span class="ac-meter-track"><i style="width:96%"></i></span><b>0.962</b></span></div>
+                  <div class="ac-row view-row" data-sev="high"><span><span class="ac-id">UP-a7c2-014</span><span class="ac-sub"><span class="ac-src"><i data-i="upload" data-s="11"></i>bank_export.csv</span></span></span><span class="ac-meter" data-tone="high"><span class="ac-meter-track"><i style="width:87%"></i></span><b>0.874</b></span></div>
+                  <div class="ac-row view-row" data-sev="high"><span><span class="ac-id">RULE-CW-TX-1005</span><span class="ac-sub"><span class="ac-src"><i data-i="controls" data-s="11"></i>Rules</span></span></span><span class="ac-meter" data-tone="high"><span class="ac-meter-track"><i style="width:95%"></i></span><b>95</b></span></div>
+                  <div class="ac-row view-row" data-sev="medium"><span><span class="ac-id">RULE-CW-TX-1002</span><span class="ac-sub"><span class="ac-src"><i data-i="controls" data-s="11"></i>Rules</span></span></span><span class="ac-meter" data-tone="medium"><span class="ac-meter-track"><i style="width:58%"></i></span><b>58</b></span></div>
+                </div>
+              </div>
+
+              <div class="step-view" data-view="review">
+                <div class="ac ac-card view-drawer">
+                  <div class="ac-detail">
+                    <span class="ac-kicker">Alert</span>
+                    <div class="ac-detail-title">al_9f21c4</div>
+                    <div class="ac-detail-badges"><span class="ac-badge" data-tone="critical">Critical</span><span class="ac-stage" data-stage="review">Under review</span></div>
+                    <div class="ac-gauge"><div class="ac-gauge-top"><span>K7 score</span><strong>0.962</strong></div><div class="ac-gauge-track"><i style="width:96%"></i></div></div>
+                    <div class="ac-why">
+                      <div class="ac-why-title">Why it was flagged</div>
+                      <div class="ac-why-row"><span>Passed on within 72 hours</span><span class="ac-why-bar"><i style="width:100%"></i></span><b>+1.42</b></div>
+                      <div class="ac-why-row"><span>First payment to this receiver</span><span class="ac-why-bar"><i style="width:62%"></i></span><b>+0.88</b></div>
+                      <div class="ac-why-row" data-down><span>Long-standing customer</span><span class="ac-why-bar"><i style="width:25%"></i></span><b>−0.35</b></div>
+                    </div>
+                    <dl class="view-facts"><div><dt>Amount</dt><dd class="ac-mono">AED 82,000</dd></div><div><dt>Sender</dt><dd class="ac-mono">CUST-1001</dd></div><div><dt>Receiver</dt><dd class="ac-mono">CP-2002</dd></div></dl>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-view" data-view="investigate">
+                <div class="ac ac-card view-net">
+                  <div class="ac-card-head"><strong>Account network</strong><span class="ac-badge" data-tone="pass">Money trail found</span></div>
+                  <svg class="ac-net" viewBox="0 0 420 220">
+                    <path class="edge" d="M50 60 L160 110" /><path class="edge" d="M50 170 L160 110" /><path class="edge" d="M160 110 L270 170" /><path class="edge flag" d="M270 60 L370 120" />
+                    <path class="edge path" d="M50 60 L160 110 L270 60 L370 120" />
+                    <circle class="node on" cx="50" cy="60" r="10" /><circle class="node" cx="50" cy="170" r="9" /><circle class="node hub" cx="160" cy="110" r="12" /><circle class="node on" cx="270" cy="60" r="10" /><circle class="node" cx="270" cy="170" r="9" /><circle class="node on" cx="370" cy="120" r="11" />
+                    <text class="label-on" x="50" y="86" text-anchor="middle">CUST-1001</text><text class="label-on" x="370" y="146" text-anchor="middle">CP-2002</text>
+                  </svg>
+                </div>
+                <div class="ac ac-card view-evidence">
+                  <span class="ac-kicker">Saved to CASE-0142</span>
+                  <div class="view-evidence-row"><i data-i="route" data-s="15"></i><span>Money trail, 3 hops, 14 to 16 Nov</span></div>
+                  <div class="view-evidence-row"><i data-i="transactions" data-s="15"></i><span>Payment CW-TX-1002 and its counterparty</span></div>
+                </div>
+              </div>
+
+              <div class="step-view" data-view="report">
+                <div class="ac ac-report-paper view-report">
+                  <span class="ac-report-mark">ACURION · SUSPICIOUS TRANSACTION REPORT</span>
+                  <strong>CASE-0142 · al_9f21c4</strong>
+                  <div class="ac-lines"><i style="width:94%"></i><i style="width:80%"></i><i style="width:88%"></i><i style="width:62%"></i></div>
+                  <div class="ac-seal"><span class="ac-seal-icon"><i data-i="badgeCheck" data-s="16"></i></span><div><strong>Signature verified</strong><small>ECDSA P-256 · SHA-256 3f9a…c2e1</small></div></div>
+                  <div class="ac-files"><span class="ac-file"><i data-i="fileCode" data-s="14"></i>CASE-0142-report.json</span><span class="ac-file"><i data-i="fileCode" data-s="14"></i>CASE-0142-goaml.xml</span></div>
+                </div>
+                <div class="ac ac-navy view-notice view-notice-ok"><div class="ac-notice" data-tone="ok"><span class="ac-notice-mark"></span><div><strong>Audit trail intact</strong><small>Every event checks out, first to last</small></div></div></div>
+              </div>
+            </div>
+            <ol class="steps-dots"><li data-step-dot="detect">Detect</li><li data-step-dot="review">Review</li><li data-step-dot="investigate">Investigate</li><li data-step-dot="report">Report</li></ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section human">
+        <div class="wrap">
+          <div class="navy rounded-card human-card" data-rise>
+            <span class="icon-tile"><i data-i="scale" data-s="22"></i></span>
+            <div>
+              <h2 class="h-card">People decide at every step.</h2>
+              <p>Acurion ranks, explains and records. It never decides that laundering happened, never moves or stops real money and never files a report on its own.</p>
+            </div>
+            <a class="btn btn-light" href="/results.html">Responsible use <i data-i="arrowRight" data-s="18"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section next-wrap">
+        <div class="wrap"><a class="next-page" href="/technology.html" data-rise><div><small>Next</small><strong>What it is built on</strong></div><span class="go"><i data-i="arrowRight" data-s="22"></i></span></a></div>
+      </section>
+    </main>
+    <!-- @footer -->
+  </body>
+</html>
